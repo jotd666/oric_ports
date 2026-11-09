@@ -1,0 +1,30 @@
+with "../../runtime/runtime.gpr";
+
+project xenon1 is
+
+for languages use ("C");
+
+   for main use ("xenon1.c");
+   
+for source_dirs use ("src");
+   for object_dir use "obj/" & runtime.hal;
+
+    for exec_dir use ".";
+
+
+
+   package compiler extends runtime.compiler is
+     for default_switches("c") use compiler'default_switches("c") & ("-Wno-implicit-fallthrough");
+   end compiler;
+   
+   for Archive_Indexer use runtime'Archive_Indexer;
+   
+   package linker extends runtime.linker is
+      case runtime.hal is
+         when "sdl" =>
+            for default_switches("c") use linker'default_switches("c") &("-lSDL_Image","-lSDL");
+            when others =>
+            end case;
+   end linker;
+   
+end xenon1;

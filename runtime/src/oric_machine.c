@@ -8,7 +8,9 @@
 #define NB_ITEMS_IN_STACK 0x100
 
 
-
+Regs r;
+unsigned char m[0x10000];
+unsigned char *stack_start;
 
 #ifndef NDEBUG
 static int turnoff_check_count = 0;

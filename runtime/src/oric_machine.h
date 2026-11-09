@@ -27,9 +27,9 @@ typedef struct {
 
 } Regs;
 
-Regs r;
-unsigned char m[0x10000];
-unsigned char *stack_start;
+extern Regs r;
+extern unsigned char m[0x10000];
+extern unsigned char *stack_start;
 
 #define cpu_update_nz(v)  r.z = (v == 0); r.n = (v > 0x7F)
 

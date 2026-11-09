@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdint.h>
 #include <string.h>
 #include <stdarg.h>
 
@@ -349,21 +350,21 @@ void rom_call(unsigned int address)
 
 void print(const T_STRING_PTR first_arg,...)
 {
-  switch((long long)first_arg)
+  switch((uintptr_t)first_arg)
     {
       case 0:
-      case (long long)PRINT_LINEFEED: 
+      case (uintptr_t)PRINT_LINEFEED: 
 	
 	crlf();
 	break;
-      case (long long)PRINT_COMMA_SEPARATOR: 
+      case (uintptr_t)PRINT_COMMA_SEPARATOR: 
 	do
 	  {
 	    print_string(" ");
 	  }
 	  while(peek(CURX) % 5 != 0);
 	break;
-      case (long long)PRINT_TAB_SEPARATOR: 
+      case (uintptr_t)PRINT_TAB_SEPARATOR: 
 	break;
       default:
   
@@ -375,19 +376,19 @@ void print(const T_STRING_PTR first_arg,...)
 	    {
 	      T_STRING_PTR na = va_arg(ap,T_STRING_PTR);
 	      if(na==0)break;
-	      switch ((long long)na)
+	      switch ((uintptr_t)na)
 		{
-		  case (long long)PRINT_LINEFEED: 
+		  case (uintptr_t)PRINT_LINEFEED: 
 		    crlf();
 		    break;
-		  case (long long)PRINT_COMMA_SEPARATOR: 
+		  case (uintptr_t)PRINT_COMMA_SEPARATOR: 
 		    do
 		      {
 			print_string(" ");
 		      }
 		      while(peek(CURX) % 5 != 0);
 		    break;
-		  case (long long)PRINT_TAB_SEPARATOR: break;
+		  case (uintptr_t)PRINT_TAB_SEPARATOR: break;
 		  default:
 		    print_string(na);
 		}

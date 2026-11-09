@@ -47,7 +47,7 @@ type Build_Type is ("Debug","Release");
       end case;
    end builder;
    
-   Base_Switches := ("-Wall","-W","-Werror","-Wno-unused-label","-fmax-errors=50");
+   Base_Switches := ("-Wall","-W","-Werror","-Wno-stringop-overflow","-Wno-unused-label","-fmax-errors=50");
    
    for Archive_Indexer use (gcc_prefix & "ranlib");
    
