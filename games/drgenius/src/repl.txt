@@ -1,0 +1,15 @@
+s/BP_10100/draw_10100_hall/
+s/BP_10200/draw_10200_2nd_floor_stairs/
+s/BP_10300/draw_10300_dining_room_or_library/
+s/BP_10500/draw_10500_laundry_room/
+s/BP_10600/draw_10600_lounge/
+s/BP_10700/draw_10700_bedroom/
+s/BP_10800/draw_10800_corridor/
+s/BP_10900/draw_10900_small_empty_bath_waiting_room/
+s/BP_11000/draw_11000_lobby_smoke_room/
+s/BP_11500/draw_11500_laboratory/
+s/BP_11700/draw_11700_dont_know_where/
+s/BP_11800/draw_11800_upstairs/
+s/BP_12200/draw_12200_room/
+s/BP_12300/draw_12300_storage_room/
+s/BP_12400/draw_12400_dressing_room/
